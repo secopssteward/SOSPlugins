@@ -92,6 +92,7 @@ namespace SecOpsSteward.Plugins.Azure.Storage
                     LinksInAs = new List<string>
                     {
                         $"{storage.ResourceGroupName}/{storage.Name}",
+                        storage.Name,
 
                         storage.EndPoints?.Primary?.Blob,
                         storage.EndPoints?.Primary?.Dfs,
