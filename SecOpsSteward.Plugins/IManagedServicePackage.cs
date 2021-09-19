@@ -81,7 +81,7 @@ namespace SecOpsSteward.Plugins
             Guid pluginId, IConfigurableObjectConfiguration config = null)
         {
             var asm = package.GetType().Assembly;
-            var plugins = asm.GetTypes().Where(t => t.IsSubclassOf(typeof(IPlugin)));
+            var plugins = asm.GetTypes().Where(t => t.IsAssignableTo(typeof(IPlugin)));
 
             var target = plugins.FirstOrDefault(p => p.GenerateId() == pluginId);
             if (target == null) return null;
