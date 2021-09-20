@@ -45,13 +45,7 @@ namespace SecOpsSteward.Plugins.WorkflowTemplates
         /// <summary>
         ///     Configuration mappings from the templated workflow to a plugin's configuration
         /// </summary>
-        public Dictionary<string, string> ConfigurationMappings
-        {
-            get => JsonSerializer.Deserialize<Dictionary<string, string>>(MappingJson);
-            set => MappingJson = JsonSerializer.Serialize(value);
-        }
-
-        public string MappingJson { get; set; } = "{}";
+        public Dictionary<string, string> ConfigurationMappings { get; set; }
 
         public static WorkflowTemplateParticipantDefinition DependentFlowParticipant =>
             new();

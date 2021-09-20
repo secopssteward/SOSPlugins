@@ -24,13 +24,7 @@ namespace SecOpsSteward.Plugins.WorkflowTemplates
         /// <summary>
         ///     Templated workflow Configuration
         /// </summary>
-        public ConfigurableObjectParameterCollection Configuration
-        {
-            get => JsonSerializer.Deserialize<ConfigurableObjectParameterCollection>(ConfigurationJson);
-            set => ConfigurationJson = JsonSerializer.Serialize(value);
-        }
-
-        public string ConfigurationJson { get; set; }
+        public ConfigurableObjectParameterCollection Configuration { get; set; }
 
         /// <summary>
         ///     Participant plugins for this templated workflow and their configuration mappings
@@ -43,7 +37,7 @@ namespace SecOpsSteward.Plugins.WorkflowTemplates
             {
                 WorkflowTemplateId = WorkflowTemplateId,
                 Name = Name,
-                ConfigurationJson = ConfigurationJson,
+                Configuration = Configuration,
                 Participants = new List<WorkflowTemplateParticipantDefinition>(Participants)
             };
         }

@@ -56,12 +56,14 @@ namespace SecOpsSteward.Plugins.Configurable
         /// <summary>
         ///     If the values are populated which define the target's grant scope
         /// </summary>
+        [JsonIgnore]
         public bool GrantScopeValuesPopulated =>
             !Parameters.Where(p => p.DefinesAuthorizationScope).Any(p => IsValueEmpty(p.Value));
 
         /// <summary>
         ///     If all required values are populated
         /// </summary>
+        [JsonIgnore]
         public bool RequiredValuesPopulated => !Parameters.Where(p => p.Required).Any(p => IsValueEmpty(p.Value));
 
         /// <summary>
