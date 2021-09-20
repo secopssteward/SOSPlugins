@@ -42,6 +42,40 @@ namespace SecOpsSteward.Plugins.WorkflowTemplates
             };
         }
 
+        /*
+         * ---===[ EXAMPLE TEMPLATE FROM STRING ]===---
+         {
+            "WorkflowTemplateId": "6d0129af-83fc-3e4e-920f-acda7a5426e8",
+            "Name": "Reset Key Vault Key",
+            "Configuration": {
+                "Parameters": [
+                    {
+                        "Name": "ResourceGroup",
+                        "ExpectedType": "System.String",
+                        "Value": null,
+                        "DisplayName": "Resource Group",
+                        "Description": null,
+                        "DefinesAuthorizationScope": true,
+                        "Required": true
+                    }
+                ]
+            },
+            "Participants": [
+                {
+                    "WorkflowStepName": "Regenerate Key Vault Key",
+                    "PackageId": "6d0129af-83fc-3e4e-920f-8e1bc11fb0a3",
+                    "PackageType": null,
+                    "ServiceConfiguration": null,
+                    "ConfigurationMappings": {
+                        "KeyName": "KeyName"
+                    }
+                }
+            ]
+        }
+        */
+        public static WorkflowTemplateDefinition FromString(string templateString) =>
+            PluginSharedHelpers.GetFromSerializedString<WorkflowTemplateDefinition>(templateString);
+
         public WorkflowTemplateDefinition RunWorkflowStep<TParticipant>(
             params KeyValuePair<string, string>[] mappings) where TParticipant : IPlugin, new()
         {
