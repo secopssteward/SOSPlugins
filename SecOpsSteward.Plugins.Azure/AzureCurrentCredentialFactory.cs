@@ -118,6 +118,7 @@ namespace SecOpsSteward.Plugins.Azure
         private string _tenantId;
 
         public TokenCredential Credential { get; protected set; }
+        public AzureCredentials AzureCredentials { get; protected set; }
 
         public string TenantId
         {
@@ -157,10 +158,10 @@ namespace SecOpsSteward.Plugins.Azure
                 // Note that the deficiency in IAzure is that it lacks key vault client support.
                 // We have to provide separate client instances authed against the TokenCredential.
 
-                var creds = new AzureCredentials(armCreds, graphCreds, _tenantId, AzureEnvironment.AzureGlobalCloud)
+                AzureCredentials = new AzureCredentials(armCreds, graphCreds, _tenantId, AzureEnvironment.AzureGlobalCloud)
                     .WithDefaultSubscription(_subscriptionId);
 
-                _azure = Microsoft.Azure.Management.Fluent.Azure.Authenticate(creds)
+                _azure = Microsoft.Azure.Management.Fluent.Azure.Authenticate(AzureCredentials)
                     .WithSubscription(_subscriptionId);
             }
 

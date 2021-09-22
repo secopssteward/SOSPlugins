@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Management.Maps" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SecOpsSteward.Plugins.Azure\SecOpsSteward.Plugins.Azure.csproj" />
+    <ProjectReference Include="..\SecOpsSteward.Plugins\SecOpsSteward.Plugins.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <GetFiles Include="$(TargetDir)*.*" />
+  </ItemGroup>
+
+  <Target Name="CopyResultFile" AfterTargets="Build" DependsOnTargets="Build">
+    <Message Text="Copying $(TargetDir)" Importance="high" />
+    <Copy SourceFiles="%(GetFiles.Identity)" Retries="10"
+          DestinationFolder="$(ProjectDir)..\..\..\plugins\$(ProjectName)"/>
+  </Target>
+
+</Project>
