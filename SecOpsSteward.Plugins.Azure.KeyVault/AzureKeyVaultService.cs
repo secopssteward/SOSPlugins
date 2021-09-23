@@ -35,6 +35,7 @@ namespace SecOpsSteward.Plugins.Azure.KeyVault
     [ElementDescription(
         "Azure Key Vault",
         "Manages Azure Key Vaults")]
+    [ServiceImage(ProviderImages.KEY_VAULT_SVG)]
     public class AzureKeyVaultService : SOSManagedService<AzureKeyVaultServiceConfiguration>
     {
         public AzureKeyVaultService(AzureCurrentCredentialFactory platformFactory)

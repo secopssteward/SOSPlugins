@@ -37,6 +37,7 @@ namespace SecOpsSteward.Plugins.Azure.EventHub
     [ElementDescription(
         "Azure Event Hub Namepace",
         "Manages Azure Event Hub Namespaces")]
+    [ServiceImage(ProviderImages.EVENT_HUB_SVG)]
     public class EventHubNamespaceService : SOSManagedService<EventHubNamespaceServiceConfiguration>
     {
         public EventHubNamespaceService(AzureCurrentCredentialFactory platformFactory)

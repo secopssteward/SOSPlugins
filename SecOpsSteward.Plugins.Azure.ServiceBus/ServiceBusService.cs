@@ -1,5 +1,4 @@
-﻿using Microsoft.Azure.Management.CosmosDB.Fluent;
-using Microsoft.Azure.Management.Fluent;
+﻿using Microsoft.Azure.Management.Fluent;
 using Microsoft.Azure.Management.ServiceBus.Fluent;
 using SecOpsSteward.Plugins.Configurable;
 using SecOpsSteward.Plugins.Discovery;
@@ -9,7 +8,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SecOpsSteward.Plugins.Azure.ServiceBus
@@ -37,6 +35,7 @@ namespace SecOpsSteward.Plugins.Azure.ServiceBus
     [ElementDescription(
         "Azure CosmosDB",
         "Manages Azure CosmosDB/DocumentDB")]
+    [ServiceImage(ProviderImages.SERVICE_BUS_SVG)]
     public class ServiceBusService : SOSManagedService<ServiceBusServiceConfiguration>
     {
         public ServiceBusService(AzureCurrentCredentialFactory platformFactory)

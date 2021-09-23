@@ -43,6 +43,7 @@ namespace SecOpsSteward.Plugins.Azure.EventHub
     [ElementDescription(
         "Azure Event Hub",
         "Manages Azure Event Hub")]
+    [ServiceImage(ProviderImages.EVENT_HUB_SVG)]
     public class EventHubService : SOSManagedService<EventHubServiceConfiguration>
     {
         public EventHubService(AzureCurrentCredentialFactory platformFactory)

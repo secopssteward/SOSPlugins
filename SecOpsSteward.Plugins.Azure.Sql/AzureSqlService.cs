@@ -35,6 +35,7 @@ namespace SecOpsSteward.Plugins.Azure.Sql
     [ElementDescription(
         "Azure SQL",
         "Manages Azure SQL Servers & Databases")]
+    [ServiceImage(ProviderImages.SQL_SERVER_SVG)]
     public class AzureSqlService : SOSManagedService<AzureSqlServiceConfiguration>
     {
         public AzureSqlService(AzureCurrentCredentialFactory platformFactory)

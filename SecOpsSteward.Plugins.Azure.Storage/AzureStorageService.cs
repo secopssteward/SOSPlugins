@@ -35,6 +35,7 @@ namespace SecOpsSteward.Plugins.Azure.Storage
     [ElementDescription(
         "Azure Storage",
         "Manages Azure Blob, Queue, and Table Storage")]
+    [ServiceImage(ProviderImages.STORAGE_ACCOUNT_SVG)]
     public class AzureStorageService : SOSManagedService<AzureStorageServiceConfiguration>
     {
         public AzureStorageService(AzureCurrentCredentialFactory platformFactory)

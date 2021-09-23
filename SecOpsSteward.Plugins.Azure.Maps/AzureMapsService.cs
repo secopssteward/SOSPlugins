@@ -33,6 +33,7 @@ namespace SecOpsSteward.Plugins.Azure.Maps
     [ElementDescription(
         "Azure Maps",
         "Manages Azure Maps")]
+    [ServiceImage(ProviderImages.AZURE_MAPS_SVG)]
     public class AzureMapsService : SOSManagedService<AzureMapsServiceConfiguration>
     {
         public MapsManagementClient GetManagementClient() =>

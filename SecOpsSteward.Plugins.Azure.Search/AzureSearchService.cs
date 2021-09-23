@@ -37,6 +37,7 @@ namespace SecOpsSteward.Plugins.Azure.Search
     [ElementDescription(
         "Azure Search",
         "Manages Azure Search Account")]
+    [ServiceImage(ProviderImages.AZURE_SEARCH_SVG)]
     public class AzureSearchService : SOSManagedService<AzureSearchServiceConfiguration>
     {
         public AzureSearchService(AzureCurrentCredentialFactory platformFactory)

@@ -59,6 +59,7 @@ namespace SecOpsSteward.Plugins.Azure.AppServices.Functions
     [ElementDescription(
         "Azure Functions",
         "Manages Azure Functions apps")]
+    [ServiceImage(ProviderImages.FUNCTIONS_SVG)]
     public class AzureFunctionService : SOSManagedService<AzureFunctionServiceConfiguration>
     {
         public AzureFunctionService(AzureCurrentCredentialFactory platformFactory)

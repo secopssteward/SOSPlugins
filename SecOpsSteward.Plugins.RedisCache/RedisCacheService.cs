@@ -36,6 +36,7 @@ namespace SecOpsSteward.Plugins.RedisCache
     [ElementDescription(
         "Azure Redis",
         "Manages Azure Redis Caches")]
+    [ServiceImage(ProviderImages.REDIS_SVG)]
     public class RedisCacheService : SOSManagedService<RedisCacheServiceConfiguration>
     {
         public RedisCacheService(AzureCurrentCredentialFactory platformFactory)

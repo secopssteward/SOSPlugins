@@ -35,6 +35,7 @@ namespace SecOpsSteward.Plugins.Azure.CosmosDb
     [ElementDescription(
         "Azure CosmosDB",
         "Manages Azure CosmosDB/DocumentDB")]
+    [ServiceImage(ProviderImages.COSMOS_DB_SVG)]
     public class CosmosDbService : SOSManagedService<CosmosDbServiceConfiguration>
     {
         public CosmosDbService(AzureCurrentCredentialFactory platformFactory)
